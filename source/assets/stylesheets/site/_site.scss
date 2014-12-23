@@ -11,7 +11,7 @@
 .site-header {
   position: relative;
 	@include clearfix;
-	background-color: #EFE8D5;
+	background-color: $dark-blue;
 }
 
 
@@ -85,7 +85,7 @@
 // ------------------------------------------------------------
 // Main Section
 // ------------------------------------------------------------
-section {
+.blockcontent {
   @include outer-container;
   aside { 
   	@include media($large-screen) {
@@ -135,7 +135,7 @@ h4, h5, h6 {
       font-size: 3em;
       line-height: 0;
       display: block;
-      color: #002B36;
+      color: $white-smoke;
     }
 	}
 
@@ -160,7 +160,7 @@ h4, h5, h6 {
 				float: left;
 				line-height: 0;
         font-weight: bold;
-        color: #444;
+        color: $white-smoke;
 
         // I removed the top and bottom padding of the header
         // and fattened up the touch targets on these links.
@@ -200,7 +200,7 @@ h4, h5, h6 {
     font-size: 2em;
     line-height: 0;
     display: block;
-    color: #002B36;
+    color: $white-smoke;
   }
 
 	.icon {
