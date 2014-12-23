@@ -14,12 +14,89 @@
 	background-color: #EFE8D5;
 }
 
-.site-main {
-  @include section_padding(2em);
 
+// ------------------------------------------------------------
+// Image hero-overflow
+// ------------------------------------------------------------
+.hero {
+  $hero-color: white;
+   background: url('../images/image-hero.png');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  padding-bottom: 4em;
+   height: 300px;
   @include media($medium-screen) {
-    @include section_padding(5em);
+    height: 450px;
   }
+
+
+   i {
+    
+    margin-bottom: .3em;
+
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    padding: 6em;
+    margin: auto;
+    text-align: center;
+    color: $hero-color;
+
+    .hero-copy {
+      text-align: center;
+
+      h1 {
+        font-size: 1.1em;
+        color: $white;
+        font-family: $serif;
+        margin: auto;
+       
+        font-weight: 400;
+        line-height: 1.4em;
+
+        @include media($medium-screen) {
+			font-size: 3em;
+			max-width: 60%;
+        }
+      }
+    }
+  }
+}
+
+#hero-overflow {
+	overflow: hidden;
+	image: cover;
+	@include media($medium-screen) {
+		height: 400px;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		@include media($medium-screen) {
+			margin-top:-1%;  // positions viewable portion of the image
+			display: block;
+		}
+	}
+}
+
+// ------------------------------------------------------------
+// Main Section
+// ------------------------------------------------------------
+section {
+  @include outer-container;
+  aside { 
+  	@include media($large-screen) {
+  	@include span-columns(3);
+  	 }
+  	}
+  article {
+  @include media($large-screen) { 
+  	@include span-columns(9); 
+  }
+}
 }
 
 .site-footer {
