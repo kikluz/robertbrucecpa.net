@@ -17,19 +17,18 @@ title: Middleman is Loaded
   <aside>
 	<h2 class="login">User login</h2><!--block title-->
 	
-		<form action="/?q=node/1&amp;destination=node%2F1" accept-charset="UTF-8" method="post" id="user-login-form">
+		<form>
 			<div>
-				<div class="form-item" id="edit-name-wrapper">
-					<label for="edit-name">Username: <span class="form-required" title="This field is required.">*</span></label>
-					<input type="text" maxlength="60" name="name" id="edit-name" size="15" value="" class="form-text required">
-				</div>
+				<label for="edit-name">Username: <span class="form-required" title="This field is required.">*</span>
+				</label>
+
+				<input type="text" maxlength="60" name="name" id="edit-name" size="15" value="" class="form-text required">
+			</div>
 
 				<div class="form-item" id="edit-pass-wrapper">
 					<label for="edit-pass">Password: <span class="form-required" title="This field is required.">*</span></label>
 					<input type="password" name="pass" id="edit-pass" maxlength="60" size="15" class="form-text required">
 				</div>
-
-			<input type="submit" name="op" id="edit-submit" value="Log in" class="form-submit">
 
 				<div class="item-list">
 					<ul>
@@ -39,12 +38,7 @@ title: Middleman is Loaded
 						</li>
 					</ul>
 				</div>
-			<input type="hidden" name="form_build_id" id="form-d84c905c216873ac50e7bf795f6d1570" value="form-d84c905c216873ac50e7bf795f6d1570">
-
-			<input type="hidden" name="form_id" id="edit-user-login-block" value="user_login_block">
-
-			</div>
-		</form>
+			</form>
   </aside>
 
 	<article>
