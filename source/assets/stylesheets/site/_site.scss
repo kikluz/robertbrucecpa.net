@@ -20,89 +20,72 @@
 // ------------------------------------------------------------
 .hero {
   $hero-color: white;
-   background: url('../images/image-hero.png');
+  background: url('../images/image-hero.png');
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
+
   padding-bottom: 4em;
-   height: 300px;
+  height: 300px;
+
   @include media($medium-screen) {
     height: 450px;
   }
 
-
-   i {
-    
-    margin-bottom: .3em;
-
-  }
-
-  .hero-inner {
-    @include outer-container;
-    @include clearfix;
-    padding: 6em;
-    margin: auto;
-    text-align: center;
+  .hero-copy {
     color: $hero-color;
+    font-size: 1.3em;
 
-    .hero-copy {
-      text-align: center;
-
-      h1 {
-        font-size: 1.1em;
-        color: $white;
-        font-family: $serif;
-        margin: auto;
-       
-        font-weight: 400;
-        line-height: 1.4em;
-
-        @include media($medium-screen) {
-			font-size: 3em;
-			max-width: 60%;
-        }
-      }
+    h1 {
+      color: $white;
+      font-family: $serif;
     }
+    p {
+      font-size: .8em;
+    }
+
+    @include media($medium-screen) {
+      font-size: 2.3em;
+    }
+
   }
 }
 
-#hero-overflow {
-	overflow: hidden;
-	image: cover;
-	@include media($medium-screen) {
-		height: 400px;
-	}
-	img {
-		width: 100%;
-		height: auto;
-		@include media($medium-screen) {
-			margin-top:-1%;  // positions viewable portion of the image
-			display: block;
-		}
-	}
-}
 
 // ------------------------------------------------------------
 // Main Section
 // ------------------------------------------------------------
-.blockcontent {
+.col-container {
   @include outer-container;
-  aside { 
-  	@include media($large-screen) {
-  	@include span-columns(3);
-  	 }
+  .col-left {
+
+    img {
+      max-width:170px;
+      @include rounded-corners($border-radius:10em);
+      display:none;
+    }
+
+    // grid
+  	@include media($medium-screen) {
+      img {
+        display:inline;
+      }
+  	  @include span-columns(4);
   	}
-  article {
-    h1 {
-      font-size: 1.3em;
-      @include media($large-screen) { 
-      font-size: 2em;
+    @include media($large-screen) {
+     @include span-columns(3);
     }
-    }
-  @include media($large-screen) { 
-  	@include span-columns(9); 
   }
-}
+  .col-right {
+
+    // grid
+    @include media($medium-screen) {
+      @include span-columns(8);
+    }
+    @include media($large-screen) {
+  	 @include span-columns(9);
+    }
+  }
 }
 
 .site-footer {
@@ -132,9 +115,10 @@ h4, h5, h6 {
     padding: 2em 0;
     float: left;
     line-height: 0;
+    color: $white;
 
     @include media($medium-screen) {
-      padding: 2em;
+      padding: 2em 0;
 		}
 
     i {
@@ -157,6 +141,9 @@ h4, h5, h6 {
 
 		@include media($medium-screen) {
 			height: auto;
+      max-width: 360px;
+      padding-top:.5em;
+      float: right;
 		}
 
 		a {
@@ -269,14 +256,14 @@ h4, h5, h6 {
 #map_canvas {
   width: 100%;
   height: 200px;
-  
+
   @include media($large-screen) {
     height: 400px;
   }
 }
 
-#map_canvas img { 
-  max-width: none; 
+#map_canvas img {
+  max-width: none;
 // to prevent UI control bug
 }
 
