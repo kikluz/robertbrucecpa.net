@@ -24,13 +24,7 @@
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
-
-  padding-bottom: 4em;
-  height: 300px;
-
-  @include media($medium-screen) {
-    height: 450px;
-  }
+  height: 400px;
 
   .hero-copy {
     color: $hero-color;
