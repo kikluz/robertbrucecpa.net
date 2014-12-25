@@ -231,3 +231,67 @@ h4, h5, h6 {
 		}
 	}
 }
+
+// ------------------------------------------------------------
+// Map From Refills
+// ------------------------------------------------------------
+.section-contact {
+  color: #3f3f3f;
+  font: 19px/29px 'RokkittRegular', Georgia, sans-serif;
+  margin-bottom: 20px;
+    h2  {
+    font-size: 1.5em;
+    @include media($medium-screen) {
+      font-size: 1.7em;
+  }
+}
+}
+.section-menu {
+  color: #3f3f3f;
+  margin-bottom: 20px;
+    h2  {
+      font: 19px/29px 'RokkittRegular', Georgia, sans-serif;
+    font-size: 1.5em;
+    @include media($medium-screen) {
+      font-size: 2.2em;
+  }
+}
+}
+
+
+
+#map_canvas {
+  width: 100%;
+  height: 200px;
+  
+  @include media($large-screen) {
+    height: 400px;
+  }
+}
+
+#map_canvas img { 
+  max-width: none; 
+// to prevent UI control bug
+}
+
+#map_canvas .content {
+  padding: .7em .5em 1em .5em;
+}
+
+#map_canvas .firstHeading {
+  font-family: $serif;
+  font-size: 1.4em;
+  margin-bottom: .4em;
+}
+
+#map_canvas .bodyContent p {
+  font-family: $sans-serif;
+  font-size: 1em;
+  margin-bottom: 0;
+}
+
+#map_canvas .bodyContent p:last-of-type {
+  border-top: 1px solid silver;
+  margin-top: .5em;
+  padding-top: .3em;
+}

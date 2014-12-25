@@ -11,10 +11,94 @@ title: Robert Bruce CPA | contact
 <div class="content"><p>Robert Bruce CPA</p>
 <p>4549 Francis Avenue<br>
 Chino, California 91710</p>
-<p>Phone (909) 548-3311</p>
+<a href="tel:9095483311">(909) 548-3311</a>
 <p>Fax   (909) 548-6322</p>
 <p>E-Mail <a href="mailto:Robertbrucecpa@gmail.com">Robertbrucecpa@gmail.com</a></p>
 </div>  
 </div>
 </div>
+
+<br />
+
+<div class="container module">
+	<div id="map_canvas"></div>
 </div>
+
+		
+
+<!-- 
+Add the code below to your <head>. 
+Edit myLatlng and the other variables.
+
+Find syntax for Features that can be styled here:
+
+https://developers.google.com/maps/documentation/javascript/reference#MapTypeStyleFeatureType  
+
+Or use a service such as:
+
+http://software.stadtwerk.org/google_maps_colorizr/#
+http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html
+https://developers.google.com/maps/documentation/javascript/tutorial
+-->
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(34.040457, -117.705929);
+    var mapCenter = new google.maps.LatLng(34.040457, -117.705929);
+    var mapCanvas = document.getElementById('map_canvas');
+    var mapOptions = {
+      center: mapCenter,
+      zoom: 15,
+      scrollwheel: false,
+      draggable: true,
+      disableDefaultUI: true,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+
+    var map = new google.maps.Map(mapCanvas, mapOptions)
+
+    map.set('styles', [
+     {
+         featureType: 'landscape',
+         elementType: 'geometry',
+         stylers: [
+           { hue: '#ffff00' },
+           { saturation: 30 },
+           { lightness: 10}
+         ]
+       },
+    ]);
+
+    var contentString = 
+      '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Robert Bruce CPA</h1>'+
+      '<div id="bodyContent">'+
+      '<p>4549 Francis Avenue,</p>'+
+      '<p>Chino, California 91710, United States</p>'+
+      '<p>(909) 548-3311</p>'+
+      '</div>'+
+      '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 300
+    });
+
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: 'Lakeport(US)'
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+      infowindow.open(map,marker);
+    });
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
